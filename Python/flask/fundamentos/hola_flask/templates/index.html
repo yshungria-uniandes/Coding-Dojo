@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+</head>
+
+<body>
+    <h1>Hola Flask desde Templates HTML!</h1>
+
+    <h3>Mi plantilla Flask</h3>
+    <p>Frase: {{ frase }}</p>
+    <p>Times: {{ veces }}</p>
+
+    {% for x in range(0,veces): %}
+    <p>{{ frase }}</p>
+    {% endfor %}
+
+    {% if frase == "hola" %}
+    <p>La frase dice hola</p>
+    {% endif %}
+</body>
+
+</html>
