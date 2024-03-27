@@ -6,6 +6,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/tablero/<int:filas>')
+def tablero_filas(filas):
+    return render_template('tablero_filas.html', filas=filas, columnas=8)
 
 @app.route('/tablero/<int:filas>/<int:columnas>')
 def tablero(filas, columnas):

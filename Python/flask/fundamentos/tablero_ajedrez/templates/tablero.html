@@ -34,38 +34,18 @@
         }
     </style>
 </head>
+
 <body>
-
-    <h1> 6 by 6 matrix </h1>
-
-    <table>
-        {% for i in range( 3 ): %}
-        <tr>
-            {% for j in range(3): %}
-            <td class="color1"></td>
-            <td class="color2"></td>
-            {% endfor %}
-        </tr>
-        <tr>
-            {% for j in range( 3): %}
-            <td class="color2"></td>
-            <td class="color1"></td>
-            {% endfor %}
-        </tr>
-        {% endfor %}
-    </table>
-
-
-    <h1> 6 by 6 matrix - refactoring </h1>
+    <h1> 
+        {{ filas }} by {{ columnas }}
+    </h1>
 
     <table>
-        {% for i in range(6): %}
+        {% for i in range( filas ): %}
         <tr>
-            {% for j in range(6): %}
+            {% for j in range( columnas): %}
             <td class="color{{ (i + j) % 2+1 }}"></td>
             {% endfor %}
-        </tr>
-        
         {% endfor %}
     </table>
 </body>
