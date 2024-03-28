@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Adivina el número</h1>
+        {% if mensaje %}
+            <div class="alert alert-info">{{ mensaje }}</div>
+        {% endif %}
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="intento">Introduce tu intento:</label>
+                <input type="number" class="form-control" id="intento" name="intento" min="1" max="100" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adivinar</button>
+            <a href="/jugar_de_nuevo" class="btn btn-primary">Jugar de nuevo</a>
+        </form>
+    </div>
+</body>
+</html>
