@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, url_for, redirect
 import random
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
+
+ganadores = []
 
 def iniciar_juego():
     session['numero_secreto'] = random.randint(1, 100)
@@ -28,7 +30,7 @@ def juego():
             mensaje = 'Demasiado alto. Intenta de nuevo.'
         else:
             mensaje = f'¡Felicidades! ¡Has adivinado el número en {session["intentos"]} intentos!'
-            return render_template('resultado.html', mensaje=mensaje)
+            return render_template('ganador.html', mensaje=mensaje)
 
         if session['intentos'] >= 5:
             mensaje = '¡Tú pierdes! Has alcanzado el límite de intentos. El número era {}'.format(session['numero_secreto'])
@@ -40,6 +42,17 @@ def juego():
         return render_template('juego.html', mensaje=mensaje)
 
     return render_template('juego.html')
+
+@app.route('/guardar_ganador', methods=['POST'])
+def guardar_ganador():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        ganadores.append((nombre, session['intentos']))
+        return redirect(url_for('lista_ganadores'))
+
+@app.route('/lista_ganadores')
+def lista_ganadores():
+    return render_template('ganadores.html', ganadores=ganadores)
 
 @app.route('/jugar_de_nuevo', methods=['GET', 'POST'])
 def jugar_de_nuevo():
