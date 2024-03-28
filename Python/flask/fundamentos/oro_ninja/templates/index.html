@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Your Gold: {{ session['gold'] }} </h1>
+        <h2>Activities:</h2>
+        <p>(Your activity here)</p>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Farm</h5>
+                        <p class="card-text">earns 10-20 golds</p>
+                        <form action="/process_money" method="post">
+                            <input type="hidden" name="building" value="farm" />
+                            <button type="submit" class="btn btn-primary">Find Gold!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cave</h5>
+                        <p class="card-text">earns 5-10 golds</p>
+                        <form action="/process_money" method="post">
+                            <input type="hidden" name="building" value="cave" />
+                            <button type="submit" class="btn btn-primary">Find Gold!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">House</h5>
+                        <p class="card-text">earns 2-5 golds</p>
+                        <form action="/process_money" method="post">
+                            <input type="hidden" name="building" value="house" />
+                            <button type="submit" class="btn btn-primary">Find Gold!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Casino</h5>
+                        <p class="card-text">earns/takes 0-50 golds</p>
+                        <form action="/process_money" method="post">
+                            <input type="hidden" name="building" value="casino" />
+                            <button type="submit" class="btn btn-primary">Find Gold!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Activities</h1>
+
+        
+        <form action="/reset" method="post" class="mt-4 mb-4">
+            <button type="submit" class="btn btn-primary">Reset Game</button>
+        </form>
+        <div class="container mt-5">
+            <div class="list-group">
+                {% for activity in session['activities']|reverse %}
+                    <div class="list-group-item list-group-item-action {% if 'lost' in activity %}list-group-item-danger{% else %}list-group-item-success{% endif %}">
+                        {{ activity }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+       
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
