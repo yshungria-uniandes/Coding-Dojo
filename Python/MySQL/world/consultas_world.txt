@@ -5,12 +5,11 @@ USE world;
 
 -- 1. ¿Qué consulta ejecutarías para obtener todos los países que hablan esloveno? Tu consulta debe devolver el nombre del país, el idioma y el porcentaje de habla del idioma.  Tu consulta debe ordenar el resultado por porcentaje de habla del idioma en orden descendente. (1)
 
--- SELECT countries.name, languages.language, languages.percentage
--- FROM languages
--- JOIN countries ON countries.id = languages.country_id
--- WHERE languages.language = 'Slovene'
--- ORDER BY languages.percentage DESC;
-
+SELECT world.languages.language AS language_name, world.countries.name AS country_name, world.languages.percentage
+FROM world.languages
+JOIN world.countries ON world.languages.country_id = world.countries.id
+WHERE world.languages.language = "Slovene"
+ORDER BY world.languages.percentage DESC;
 -- 2. ¿Qué consulta ejecutarías para mostrar el número total de ciudades de cada país?  Tu consulta debe devolver el nombre del país, el idioma y el número total de ciudades. Tu consulta debe ordenar el resultado por el número de ciudades en orden descendente. (3)
 
 -- SELECT countries.name, COUNT(cities.id) AS cities
@@ -71,7 +70,5 @@ USE world;
 -- FROM countries
 -- GROUP BY countries.region
 -- ORDER BY countries DESC;
-
-
 
 
