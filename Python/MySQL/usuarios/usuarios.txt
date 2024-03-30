@@ -1,0 +1,25 @@
+USE esquema_usuarios;
+
+-- Consulta: crea 3 usuarios nuevos
+-- INSERT INTO users (first_name, last_name, email) VALUES ('Juan', 'Pérez', 'juan@example.com'), ('María', 'Gómez', 'maria@example.com'), ('Pedro', 'López', 'pedro@example.com');
+
+-- Consulta: recupera todos los usuarios
+-- SELECT * FROM users;
+
+-- Consulta: recupera el primer usuario usando su dirección de correo electrónico
+-- SELECT * FROM users WHERE email = 'juan@example.com' LIMIT 1;
+
+-- Consulta: recupera el último usuario usando su id
+-- SELECT * FROM users ORDER BY id DESC LIMIT 1;
+
+-- Consulta: cambia el usuario con id=3 para que su apellido sea Panqueques
+-- UPDATE users SET last_name = 'Panqueques' WHERE id = 3;
+
+-- Consulta: elimina el usuario con id=2 de la base de datos
+-- DELETE FROM users WHERE id = 2;
+
+-- Consulta: obtén todos los usuarios, ordenados por su nombre
+-- SELECT * FROM users ORDER BY first_name;
+
+-- Consulta BONUS: obtén todos los usuarios, ordenados por su nombre en orden descendente
+-- SELECT * FROM users ORDER BY first_name DESC;

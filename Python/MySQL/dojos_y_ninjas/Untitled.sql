@@ -1,19 +1,15 @@
-Use lead_gen_business;
+USE esquema_usuarios;
 
-SELECT * FROM billing;
 
-SELECT first_name, last_name FROM clients;
+-- Consulta: crea 3 usuarios nuevos
+-- INSERT INTO users (first_name, last_name, email) VALUES ('Juan', 'Pérez', 'juan@example.com'), ('María', 'Gómez', 'maria@example.com'), ('Pedro', 'López', 'pedro@example.com');
 
-SELECT * FROM clients WHERE first_name LIKE "%e";
+-- Consulta: recupera todos los usuarios
+-- SELECT * FROM users;
 
-INSERT INTO leads (first_name, last_name, registered_datetime, email, sites_id)
-VALUES('Jason', 'Kobuchi', NOW(), 'jko@hi.com', 1);
+-- Consulta: recupera el primer usuario usando su dirección de correo electrónico
+-- SELECT * FROM users WHERE email = 'juan@example.com' LIMIT 1;
 
-UPDATE leads SET first_name = 'Given Name', last_name='Family Name' WHERE sites_id = '1';
-
-DELETE FROM leads WHERE id = 1;
-
-SELECT CONCAT('Mr.',  ' ', first_name, ' ', last_name) AS full_name FROM leads;
-
-SELECT LENGTH(last_name) AS last_len FROM leads;
+-- Consulta: recupera el último usuario usando su id
+SELECT * FROM users ORDER BY id DESC LIMIT 1;
 
