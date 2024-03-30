@@ -1,20 +1,26 @@
 -- Desactivar el modo seguro de actualizaciones SQL
 SET SQL_SAFE_UPDATES = 0;
 
-USE esquema_libros;
+USE esquema_amistades;
 
--- Consulta: crea 5 usuarios diferentes
--- INSERT INTO users (first_name, last_name) VALUES ('Jane', 'Austen'), ('Emily', 'Dickinson'), ('Fyodor', 'Dostoevsky'), ('William', 'Shakespeare'), ('Lau', 'Tzu');
+-- Consulta: crea 6 usuarios nuevos
+-- INSERT INTO users (first_name, last_name) VALUES ('Amy', 'Giver'), ('Eli', 'Byers'), ('Big', 'Bird'), ('La rana', 'René'), ('Marky', 'Mark'), ('La rana', 'René');
 
--- Consulta: crea 5 libros con los siguientes nombres y número de páginas
--- INSERT INTO books (tittle, num_of_pages) VALUES ('C Sharp', 300), ('Java', 400), ('Python', 350), ('PHP', 320), ('Ruby', 380);
+-- Consulta: haz que el usuario 1 sea amigo del usuario 2, 4 y 6
+-- INSERT INTO friendships (user_id, friend_id) VALUES (1, 2), (1, 4), (1, 6);
 
--- Consulta: cambia el nombre del libro de C Sharp a C#
--- UPDATE books SET tittle = 'C#' WHERE tittle = 'C Sharp';
+-- Consulta: haz que el usuario 2 sea amigo del usuario 1, 3 y 5
+-- INSERT INTO friendships (user_id, friend_id) VALUES (2, 1), (2, 3), (2, 5);
 
--- Consulta: cambia el nombre del cuarto usuario a Bill
--- UPDATE users SET first_name = 'Bill' WHERE id = 4;
 
--- Consulta: haz que el primer usuario marque como favorito los 2 primeros libros
--- INSERT INTO favorites (user_id, book_id) VALUES (1, 1), (1, 2);
+-- Consulta: haz que el usuario 3 sea amigo del usuario 2 y 5
+-- INSERT INTO friendships (user_id, friend_id) VALUES (3, 2), (3, 5);
 
+-- Consulta: haz que el usuario 4 sea amigo del usuario 3
+-- INSERT INTO friendships (user_id, friend_id) VALUES (4, 3);
+
+-- Consulta: haz que el usuario 5 sea amigo del usuario 1 y 6
+-- INSERT INTO friendships (user_id, friend_id) VALUES (5, 1), (5, 6);
+
+-- Consulta: haz que el usuario 6 sea amigo del usuario 2 y 3
+INSERT INTO friendships (user_id, friend_id) VALUES (6, 2), (6, 3);
