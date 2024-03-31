@@ -1,0 +1,67 @@
+Aquí hay algunos errores comunes que podrías provocar en tu archivo mysqlconnection.py y cómo podrías llegar a ellos:
+
+1. Error de nombre de host incorrecto:
+Cambia el nombre del host a una dirección IP incorrecta o a un nombre de host inexistente. Por ejemplo:
+
+connection = pymysql.connect(host='incorrect_host_address', ...)
+
+2. Error de nombre de usuario incorrecto:
+Proporciona un nombre de usuario incorrecto para la conexión a la base de datos. Por ejemplo:
+
+connection = pymysql.connect(user='incorrect_username', ...)
+
+3. Error de contraseña incorrecta:
+Proporciona una contraseña incorrecta para la conexión a la base de datos. Por ejemplo:
+
+connection = pymysql.connect(password='incorrect_password', ...)
+
+4. Error de base de datos incorrecta:
+Intenta conectarte a una base de datos que no existe en tu servidor MySQL. Por ejemplo:
+
+connection = pymysql.connect(db='incorrect_database_name', ...)
+
+5. Error de puerto incorrecto:
+Cambia el puerto al que intentas conectarte a un puerto incorrecto o no utilizado en tu servidor MySQL. Por ejemplo:
+
+connection = pymysql.connect(port=9999, ...)
+
+6. Error de codificación incorrecta:
+Proporciona una codificación de caracteres incorrecta para la conexión. Por ejemplo:
+
+connection = pymysql.connect(charset='utf-16', ...)
+
+7. Error de tiempo de espera de conexión:
+Intenta conectarte a un servidor MySQL que está inaccesible o no responde. Por ejemplo, si el servidor MySQL no está en ejecución o si hay un problema de red:
+
+connection = pymysql.connect(host='localhost', port=3306, connect_timeout=1, ...)
+
+
+Errores en la teminal: 
+
+Error 1: Error de nombre de host incorrecto
+    Descripción: Se proporcionó una dirección IP incorrecta o un nombre de host inexistente.
+    Mensaje de error: getaddrinfo ENOTFOUND incorrect_host_address
+
+Error 2: Error de nombre de usuario incorrecto
+    Descripción: Se proporcionó un nombre de usuario incorrecto para la conexión a la base de datos.
+    Mensaje de error: Access denied for user 'incorrect_username'
+
+Error 3: Error de contraseña incorrecta
+    Descripción: Se proporcionó una contraseña incorrecta para la conexión a la base de datos.
+    Mensaje de error: Access denied for user 'root'@'localhost' (using password: YES)
+
+Error 4: Error de base de datos incorrecta
+    Descripción: Se intentó conectar a una base de datos que no existe en el servidor MySQL.
+    Mensaje de error: Unknown database 'incorrect_database_name'
+
+Error 5: Error de puerto incorrecto
+    Descripción: Se intentó conectarse a un puerto incorrecto o no utilizado en el servidor MySQL.
+    Mensaje de error: Can't connect to MySQL server on 'localhost' (99)
+
+Error 6: Error de codificación incorrecta
+    Descripción: Se proporcionó una codificación de caracteres incorrecta para la conexión.
+    Mensaje de error: Unknown encoding: 'utf-16'
+
+Error 7: Error de tiempo de espera de conexión
+    Descripción: No se pudo conectar al servidor MySQL debido a un tiempo de espera de conexión.
+    Mensaje de error: Can't connect to MySQL server on 'localhost' (110)
