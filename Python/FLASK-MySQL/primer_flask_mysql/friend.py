@@ -1,5 +1,7 @@
 # importar la función que devolverá una instancia de una conexión
 from mysqlconnection import connectToMySQL
+
+
 # modelar la clase después de la tabla friend de nuestra base de datos
 class Friend:
     def __init__(self, data):
@@ -21,3 +23,10 @@ class Friend:
         for friend in results:
             friends.append(cls(friend))
         return friends
+    
+    # método de clase para guardar a nuestro amigo en la base de datos
+    @classmethod
+    def save(cls, data ):
+        query = "INSERT INTO friends ( first_name , last_name , occupation , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(occ)s , NOW() , NOW() );"
+        # data es un diccionario que se pasará al método de guardar desde server.py
+        return connectToMySQL('first_flask').query_db( query, data )
