@@ -14,9 +14,31 @@ class Dojo:
     def get_all(cls):
         query = "SELECT * FROM dojos"
         results = connectToMySQL(cls.schema).query_db(query)
+        '''results is a list of dictionaries
+        results = [
+            {
+                "id": 1,
+                "name": "Coding Dojo",
+                "created_at": "2021-07-20 16:00:00",
+                "updated_at": "2021-07-20 16:00:00"
+            },
+            {
+                "id": 2,
+                "name": "Coding Dojo",
+                "created_at": "2021-07-20 16:00:00",
+                "updated_at": "2021-07-20 16:00:00"
+            }
+        '''
         dojos = []
+    
         for row in results:
+            # row is a dictionary, for example: row = {"id": 1, "name": "Coding Dojo", "created_at": "2021-07-20 16:00:00", "updated_at": "2021-07-20 16:00:00"}
             dojos.append(cls(row))
+        print(dojos)
+        '''dojos is a list of objects
+        
+        
+        '''
         return dojos
 
     @classmethod
