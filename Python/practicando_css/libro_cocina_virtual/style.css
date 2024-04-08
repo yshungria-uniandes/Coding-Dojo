@@ -1,0 +1,21 @@
+.titulo{
+    width: 196px;
+    background-color: cornflowerblue;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    color: white;
+   
+   }
+   .superior-izquierda{
+    float: left;
+    background-color: yellow;
+   }
+   .superior-derecha{
+    display: inline-block;
+    background-color: orange
+   }
+   .inferior{
+    width: 200px;
+    background-color: green;
+   }

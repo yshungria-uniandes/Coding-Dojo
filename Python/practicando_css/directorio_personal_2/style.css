@@ -1,0 +1,21 @@
+p{
+    float: right;
+   }
+   div{
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+   }
+   #clientes{
+    background-color: cornflowerblue;
+   }
+   #personales{
+    background-color: hotpink;
+   }
+   #proveedores{
+    background-color: gold;
+   }
+   #colegas{
+    background-color: aqua;
+   }
+   

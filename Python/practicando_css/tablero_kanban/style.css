@@ -1,0 +1,19 @@
+#media{
+    background-color: yellow;
+   }
+   #alta{
+    background-color: red;
+    color: white;
+   }
+   #leve{
+    background-color: blue;
+    color: white;
+   }
+   th{
+    border-color: black;
+    border-style: solid;
+   }
+   td{
+    border-color: black;
+    border-style: solid;
+   }

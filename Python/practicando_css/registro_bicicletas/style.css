@@ -1,0 +1,25 @@
+label[for="nombre"]{
+    color: #F06F67;
+    font-weight: bold;
+   }
+   label[for="apellido"]{
+    color: #F2B5B1;
+    font-weight: bold;
+   }
+   label[for="correo"]{
+    color: #705452;
+    font-weight: bold;
+   }
+   label[for="id"]{
+    color: #BD5851;
+    font-weight: bold;
+   }
+   label[for="color"]{
+    color: #703530;
+    font-weight: bold;
+   }
+   label[for="foto"]{
+    color: #F06F67;
+    font-weight: bold;
+   }
+   

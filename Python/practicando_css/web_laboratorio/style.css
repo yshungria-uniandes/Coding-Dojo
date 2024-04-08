@@ -1,0 +1,15 @@
+label[for="rojo"]{
+    background-color: red;
+    color: white;
+   }
+   label[for="naranja"]{
+    background-color: orange;
+    color: white;
+   }
+   label[for="amarillo"]{
+    background-color: yellow;
+   }
+   label[for="verde"]{
+    background-color: green;
+    color: white
+   }

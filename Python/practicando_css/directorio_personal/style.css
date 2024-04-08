@@ -1,0 +1,20 @@
+p{
+    float: right;
+   }
+   div{
+    border-color: white;
+    border-style: solid;
+   }
+   .cliente{
+    background-color: cornflowerblue;
+   }
+   .personal{
+    background-color: hotpink;
+   }
+   .proveedor{
+    background-color: gold;
+   }
+   .colega{
+    background-color: aqua;
+   }
+   

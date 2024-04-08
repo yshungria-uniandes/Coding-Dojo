@@ -1,0 +1,27 @@
+.titulo{
+    width: 204px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+   }
+   
+   .texto{
+    display: inline-block;
+    width: 204px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+   
+   }
+   .inferior{
+    width: 204px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+   }
