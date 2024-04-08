@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="mt-5 mx-auto p-3" style="width: 500px; border-radius: 15px; background-color: #343a40;">
+    <h2 class="text-light">Bienvenido {{ user.first_name }}</h2>
+    <a class="btn btn-success rounded-pill mt-3" href="/logout">HOME</a>
+</div>
+
+{% endblock %}
