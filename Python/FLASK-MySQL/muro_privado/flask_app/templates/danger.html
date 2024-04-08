@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card mx-auto shadow" style="max-width: 400px;">
+        <div class="card-header bg-danger text-white text-center">
+            <h2 class="mb-0">¡Advertencia!</h2>
+        </div>
+        <div class="card-body">
+            <p class="card-text">El mensaje que intenta eliminar no le pertenece. Si continúa intentando eliminar mensajes que no le pertenecen, su dirección IP (<span class="fw-bold">{{ ip }}</span>) será reportada al administrador.</p>
+            <a href="#" class="btn btn-primary">Aceptar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
