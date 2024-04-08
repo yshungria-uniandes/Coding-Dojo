@@ -12,14 +12,14 @@
 
 <body>
     <div class="wrapper ">
-        <div class="bg-dark p-5 text-white rounded col-6 mx-auto shadow-lg ">
+        <div class="mt-5 bg-dark p-5 text-white rounded col-6 mx-auto shadow-lg ">
             <h1 class="text-center">New Ninja</h1>
             <form action="/create/ninja" method="POST">
                 <div class="col-md-12">
                     <label for="dojo" class="col-sm-2 col-form-label">Dojo:</label>
                     <select class="form-select" name="dojo_id">
                         {% for dojo in dojos %}
-                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        <option value="{{dojo.id}}">{{dojo.id}} - {{dojo.name}}</option>
                         {% endfor %}
                     </select>
                 </div>

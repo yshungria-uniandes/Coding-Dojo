@@ -8,6 +8,8 @@ class Dojo:
         self.name = data['name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+
+        #Una lista con todos los ninjas de un dojo
         self.ninjas = []
 
     @classmethod
@@ -18,13 +20,13 @@ class Dojo:
         results = [
             {
                 "id": 1,
-                "name": "Coding Dojo",
+                "name": "PYTHON",
                 "created_at": "2021-07-20 16:00:00",
                 "updated_at": "2021-07-20 16:00:00"
             },
             {
                 "id": 2,
-                "name": "Coding Dojo",
+                "name": "JAVA",
                 "created_at": "2021-07-20 16:00:00",
                 "updated_at": "2021-07-20 16:00:00"
             }
@@ -34,11 +36,8 @@ class Dojo:
         for row in results:
             # row is a dictionary, for example: row = {"id": 1, "name": "Coding Dojo", "created_at": "2021-07-20 16:00:00", "updated_at": "2021-07-20 16:00:00"}
             dojos.append(cls(row))
-        print(dojos)
-        '''dojos is a list of objects
-        
-        
-        '''
+        print(f"Ultimo Dojo: {dojos[int(len(dojos)) - 1].name}")
+
         return dojos
 
     @classmethod

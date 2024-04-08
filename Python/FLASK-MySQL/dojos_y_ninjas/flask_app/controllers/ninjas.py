@@ -9,5 +9,6 @@ def ninjas():
 
 @app.route('/create/ninja',methods=['POST'])
 def create_ninja():
+    print(request.form)
     ninja.Ninja.save(request.form)
     return redirect('/')
