@@ -39,6 +39,7 @@ def read_recipe(id):
     resultado = Recipe.get_recipe_by_id(data)
     resultado.created_at = resultado.created_at.strftime("%d %B, %Y")
     return render_template("read_recipe.html",recipe=resultado)
+
 @app.route("/recipes/edit/<int:id>",methods=['GET','POST'])
 def edit_recipe(id):
     if request.method == 'GET':
