@@ -1,7 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=flask
 #  https://www.toptal.com/developers/gitignore
-
+.DS_Store
 ### Flask ###
 instance/*
 !instance/.gitignore
